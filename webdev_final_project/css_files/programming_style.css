@@ -1,0 +1,26 @@
+/** Programming page-specific styling **/
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* .event is the encompassing div for each event information block (date, title, time, location, details) */
+.event p, h2 {
+    text-align: left;
+}
+
+.event p {
+    margin: 0;
+}
+
+h2 {
+    padding-top: 1.0em;
+    margin-bottom: 0.5em;
+}
+
+/* the universe tends towards */
+#intro p {
+    padding-top: 2.0em;
+    font-size: 1.1em;
+}

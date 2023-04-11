@@ -1,0 +1,45 @@
+/** Special Events page-specific styling **/
+
+section {
+    padding-top: 1.0em;
+}
+
+.clearfix::after { /* clearfix code copied from w3schools' "How to - clear floats (clearfix)" */
+    content: "";
+    clear: both;
+    display: table;
+}
+
+section div {
+    padding-left: 1em;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 849px) { /* on smaller screens, the images and description divs will stack on each other */
+    
+    section img {
+        width: 100%;
+        float: none;
+    }
+    
+    section div {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 850px) { /* on larger screens, the images and description divs will be side-by-side */
+    
+    section img {
+        width: 50%;
+        float: left;
+    }
+    
+    section div {
+        float: right;
+        width: 50%;
+    }
+}

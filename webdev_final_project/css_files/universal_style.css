@@ -1,0 +1,142 @@
+/** this stylesheet is used for all pages **/
+
+/** all-page styling **/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: #202020; /* charcoal black */
+    color: #202020; /* having both background-color and color set to the same thing may seem strange, but all text is
+    contained in sections which are a different color */
+}
+
+body.dark_mode {
+    background-color: #303040; /* dark grey with a blue tinge */
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 799px) {
+    .navbar li {float: none;} /* the navbar is vertical on lower screen widths */
+    body {margin-top: 15.95em;} /* as such, the body of the document starts lower down */
+}
+
+@media only screen and (min-width: 800px) {
+    .navbar li {float: left;} /* the navbar is horizontal on higher screen widths */
+    body {margin-top: 3.19em;} /* as such, the body of the document starts higher up */
+}
+
+/** navbar styling **/
+
+.navbar {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed; /* the navbar will stay in the same place relative to the viewport */
+    top: 0; /* to override the margin-top property of the body element, the navbar's position needs to be manually set */
+    z-index: 100; /* the navbar should always be above other elements within the page */
+    background-color: #ffffff;
+}
+
+.navbar.dark_mode { /* when .dark_mode is added to the navbar using JS, every color needs to be flipped */
+    background-color: #202020;
+}
+    
+.navbar li a {
+    color: #202020;
+    padding: 1em;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.navbar.dark_mode li a {
+    color: #ffffff;
+}
+
+.navbar li a:hover, .navbar #darkmode:hover {
+    background-color: #202020;
+    color: #ffffff;
+    transition: 0.5s; /* on hover over the navbar items, the text and background flip in half a second */
+}
+
+.navbar.dark_mode li a:hover, .navbar.dark_mode #darkmode:hover {
+    background-color: #ffffff;
+    color: #202020;
+}
+
+a {
+    text-decoration: none; /* buttons look better without underlined links */
+}
+
+#darkmode {
+    float: right; /* this float property overrides the default behavior defined in the @media queries above */
+    cursor: pointer; /* this lets users know the area is interactive despite not being a link */
+}
+
+#darkmode.dark_correction a { /* the _correction classes are used in darkmode.js to retain button visibility */
+    color: #202020;
+}
+
+#darkmode.light_correction a {
+    color: #ffffff;
+}
+
+/** film tape styling **/
+
+main {
+    background-color: #202020;
+    padding: 0;
+}
+
+main.dark_mode {
+    background-color: #303040;
+}
+
+.wrapper {
+    border-left: 10px dashed #ffffff; /* these thick dashed borders are the ticks on the edge of the film tape */
+    border-right: 10px dashed #ffffff;
+    padding: 0.01em 1.0em 0 1.0em;
+    margin: 1.0em 1.0em 0 1.0em;
+}
+
+.wrapper.dark_mode {
+    border-left: 10px dashed #101010;
+    border-right: 10px dashed #101010;
+}
+
+section, .headingless { /* the .headingless class mimics a section since all sections must have headings */
+    background-color: #ffffff;
+    margin: 1.0em 0 0 0;
+    padding: 0 2.0em 1.0em 2.0em;
+    border-radius: 10px;
+}
+
+section.dark_mode, .headingless.dark_mode {
+    background-color: #101010;
+}
+
+h2, p {
+    text-align: center;
+    font-weight: normal;
+    padding-top: 0.5em;
+}
+
+footer {
+    padding: 1.0em 1.0em 0.2em;
+    color: #aaaaaa; /* a light grey */
+    font-size: 0.8em;
+}
+
+footer.dark_mode {
+    color: #c0c0c0; /* a lighter grey */
+}
+
+
+
+

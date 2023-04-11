@@ -1,0 +1,52 @@
+/** Favorites page-specific styling **/
+
+/* .favorite-img is a div containing an image */
+.favorite-img > img {
+    width: 100%; /* the image fills its entire container */
+}
+
+/* .favorite-desc is a div containing a heading and description */
+.favorite-desc:nth-child(4) { /* selects the last element in the description */
+    padding-bottom: 1.0em;
+    margin-bottom: 0;
+}
+
+.favorite-desc > h2 {
+    margin-top: 0;
+}
+
+.favorite-desc {
+    padding: 0 1.0em;
+}
+
+.grid { /* the images and descriptions are displayed in a grid which has 1, 2, or 4 columns depending on screen size */
+    display: grid;
+    padding: 1.0em;
+    row-gap: 1.0em;
+}
+
+@media only screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: 100%; /* on small screens, the images and descriptions will be stacked on each other */
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1250px) {
+    .grid {
+        grid-template-columns: 50% 50%; /* on medium screens, images and their descriptions will be side-by-side */
+    }
+
+    .favorite-desc:nth-child(4) {
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 1251px) {
+    .grid {
+        grid-template-columns: 25% 25% 25% 25%; /* on large screens, two images and two descriptions will exist per row */
+    }
+
+    .favorite-desc:nth-child(4) {
+        padding-bottom: 0;
+    }
+}

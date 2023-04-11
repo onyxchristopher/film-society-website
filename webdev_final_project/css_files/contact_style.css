@@ -1,0 +1,79 @@
+/** Contact page-specific styling **/
+/* Resource used: w3schools' grid areas page and tryit editor */
+
+.grid { /* the image, text, and icons are displayed in a grid which has 4 or 8 columns */
+    padding: 1.0em;
+    display: grid;
+}
+
+.grid > #phone-img {
+    width: 100%; /* image takes up its grid area completely */
+    grid-area: image; /* its grid area is named 'image', rather fittingly */
+}
+
+#contacttext {
+    grid-area: text; /* text grid area is named 'text' */
+}
+
+#contacttext > h2 {
+    margin-top: 0;
+}
+
+#contacttext > p {
+    padding: 0.5em 1.0em;
+    margin: 0;
+}
+
+#contacticon-1 {
+    grid-area: icon-1; /* each icon has its own grid area named icon-# */
+}
+
+#contacticon-2 {
+    grid-area: icon-2;
+}
+
+#contacticon-3 {
+    grid-area: icon-3;
+}
+
+#contacticon-4 {
+    grid-area: icon-4;
+}
+
+.grid a {
+    width: 60px; /* an absolute width keeps the contact icons small so they do not look preposterous on larger screens */
+    margin: auto; /* this centers the icons in their grid areas */
+}
+
+img[id*="contacticon"] {
+    width: 100%; /* icon images are inside <a> elements and take up the entire width inside */
+}
+
+@media only screen and (max-width: 799px){
+    .grid {
+        grid-template-columns: 25% 25% 25% 25%; /* four columns */
+        grid-template-areas: /* icons are placed horizontally at the bottom */
+        'image image image image'
+        'image image image image'
+        'image image image image'
+        'image image image image'
+        'text text text text'
+        'text text text text'
+        'text text text text'
+        'icon-1 icon-2 icon-3 icon-4'
+        ;
+    }
+    
+}
+
+@media only screen and (min-width: 800px){
+    .grid {
+        grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%; /* eight columns */
+        grid-template-areas: /* icons are stacked vertically on the right */
+        'image image image image text text text icon-1'
+        'image image image image text text text icon-2'
+        'image image image image text text text icon-3'
+        'image image image image text text text icon-4'
+        ;
+    }
+}

@@ -1,0 +1,65 @@
+/** Home page-specific styling **/
+
+/** carousel styling **/
+
+#carousel {
+    margin: 0;
+}
+
+.carousel-image {
+    position: absolute; /* all images are in the same place */
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0; /* a default opacity value of 0 is required for the start of the carousel to not have display glitches */
+}
+
+#first-image {
+    position: relative; /* the first image takes up space on the page so that the intro div is in the right place */
+    opacity: 1; /* this overwrites the default opacity of 0 for just the first image, so it shows upon landing */
+}
+
+@keyframes fade { /* two animations used in carousel.js */
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes unfade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/** intro styling **/
+
+#intro {
+    padding-top: 1.0em;
+    padding-bottom: 1.0em;
+}
+
+#introtext {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+/** button links (non-navbar links to other pages) */
+
+.button-link {
+    padding: 0.7em;
+    border: 1px solid #202020;
+    border-radius: 5px;
+    background-color: #b3ffff; /* a light blue */
+    width: fit-content; /* a responsive width attribute that prevents the button links from overflowing */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.8em;
+    color: #202020;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.button-link.dark_mode {
+    border: 1px solid #ffffff;
+    background-color: #00004d; /* a dark blue: the exact inverse of its lighter counterpart (b3 + 4d = ff) */
+    color: #ffffff;
+}
